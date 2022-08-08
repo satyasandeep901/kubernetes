@@ -1,0 +1,18 @@
+apiversion: v1
+kind: ReplicationController
+metadata:
+  name: mylogin-rc
+spec:
+  replicas: 4
+  selector:
+    app: mylogin
+  template:
+    metadata:
+      labels:
+        app: mylogin
+    spec:
+      containers:
+        - name: mylogin-container
+          image: satyasandeep901/myloginimage31jul22:1
+          ports:
+            - containerPort: 8080

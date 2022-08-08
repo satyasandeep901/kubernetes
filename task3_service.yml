@@ -1,0 +1,14 @@
+apiversion: v1
+kind: service
+metadata:
+  name: mylogin-svc
+  labels:
+    app: mylogin
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodeport: 30001
+    protocol: TCP
+  selector:
+    app: mylogin
