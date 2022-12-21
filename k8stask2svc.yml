@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: myloginapp-svc
+   labels:
+     app: myloginapp
+     version: 3.6.2
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 30002
+    protocol: TCP
+  selector:
+     app: myloginapp
+     version: 3.6.2
